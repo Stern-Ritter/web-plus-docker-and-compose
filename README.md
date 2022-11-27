@@ -1,3 +1,5 @@
 # Докеризация приложения
 
-Перед тем как приступить к выполнению проектной работы разместите в репозитории исходный код фронтенд и бэкенд частей сервиса КупиПодариДай, реализованного вами ранее. 
+1. IP адрес 158.160.19.217
+1. Frontend https://https://stern.students.nomoredomains.club/
+1. Backend https://https://api.stern.students.nomoredomains.club
