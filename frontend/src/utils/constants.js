@@ -1,5 +1,5 @@
-export const URL = "http://localhost:4000";
-//export const URL = "https://api.stern.students.nomoredomains.club";
+//export const URL = "http://localhost:4000";
+export const URL = "https://api.stern.students.nomoredomains.club";
 
 export const MINIMUM_PASSWORD_LENGTH = 3;
 export const MINIMUM_USERNAME_LENGTH = 3;
