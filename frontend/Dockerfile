@@ -12,7 +12,7 @@ RUN npm run build
 
 
 
-FROM nginx:1.23.1-alpine as production
+FROM nginx:latest as production
 
 COPY --from=builder /app/build ./usr/share/nginx/html
 
