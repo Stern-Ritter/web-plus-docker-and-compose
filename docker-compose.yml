@@ -1,0 +1,45 @@
+version: '3.9'
+services:
+  backend:
+    container_name: backend
+    build: ./backend
+    image: backend:prod
+    env_file: .env
+    ports:
+      - '4000:3000'
+    links:
+      - database
+    networks:
+      - internal-network
+      - internet
+    depends_on:
+      - database
+    restart: on-failure
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    image: frontend:prod
+    ports:
+      - '8081:80'
+    depends_on:
+      - backend
+    restart: on-failure
+  database:
+    container_name: database
+    image: 'postgres:12'
+    env_file: .env
+    ports:
+      - '5432:5432'
+    networks:
+      - internal-network
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    restart: on-failure
+networks:
+  internal-network:
+    driver: bridge
+    internal: true
+  internet:
+    driver: bridge
+volumes:
+  pg-data: {}
