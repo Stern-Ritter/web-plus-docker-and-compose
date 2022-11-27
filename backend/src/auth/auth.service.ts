@@ -15,7 +15,7 @@ export class AuthService {
 
   async login(user: User) {
     const payload = { sub: user.id };
-    const secret = this.configService.get('JWT_SECRET_KEY');
+    const secret = this.configService.get('JWT_SECRET');
     return { access_token: this.jwtService.sign(payload, { secret }) };
   }
 
